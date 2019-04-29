@@ -1,0 +1,202 @@
+\hypertarget{analyseur_8c}{}\section{src/analyseur.c File Reference}
+\label{analyseur_8c}\index{src/analyseur.\+c@{src/analyseur.\+c}}
+
+
+Fonctions principales.  
+
+
+{\ttfamily \#include \char`\"{}analyseur.\+h\char`\"{}}\\*
+Include dependency graph for analyseur.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{analyseur_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{Liste} \hyperlink{analyseur_8c_a9e11e88b64a6173035fbc3693b792e42}{cons} (\hyperlink{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{Liste} l, \hyperlink{analyseur_8h_ac588becf5702254d8163c3386192122b}{Paquet} $\ast$nvelt)
+\begin{DoxyCompactList}\small\item\em Constructeur de liste de paquet. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8c_a5dc2f4ebaf124e7bf53b56c7477199a8}{callback} (u\+\_\+char $\ast$user, const struct pcap\+\_\+pkthdr $\ast$h, const u\+\_\+char $\ast$bytes)
+\begin{DoxyCompactList}\small\item\em Fonction de callback appelé à chaque lecture d\textquotesingle{}un nouveau paquet. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8c_aba24889b9dabf8bcd576c88285c7bd75}{affichage\+\_\+option} (\hyperlink{struct_option}{Option} $\ast$opt)
+\begin{DoxyCompactList}\small\item\em Affiche les options et les arguments passés à l\textquotesingle{}exécutable. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8c_a29cc98853004fea19143b99c2611c197}{set\+\_\+option} (\hyperlink{struct_option}{Option} $\ast$option, int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Reconnais les options passés à l\textquotesingle{}exécutable. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8c_a999b77002afb0d1895733855d87d9dd3}{start\+\_\+analyse\+\_\+online} (\hyperlink{struct_user}{User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}analyse en mode online. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8c_a4b115c29c5b2ec60686bd113005a2ba4}{start\+\_\+analyse\+\_\+offline} (\hyperlink{struct_user}{User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}analyse en mode offline. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8c_aa786d2dda18985d6ae1c20b425a0b1b4}{free\+\_\+l\+\_\+paquet} (\hyperlink{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{Liste} l\+\_\+paquet)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire. \end{DoxyCompactList}\item 
+int \hyperlink{analyseur_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fonctions principales. 
+
+\begin{DoxyAuthor}{Author}
+De La Roche Constantin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/12/16
+\end{DoxyDate}
+Contient tout ce qui concerne pcap 
+
+\subsection{Function Documentation}
+\index{analyseur.\+c@{analyseur.\+c}!affichage\+\_\+option@{affichage\+\_\+option}}
+\index{affichage\+\_\+option@{affichage\+\_\+option}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{affichage\+\_\+option(\+Option $\ast$opt)}{affichage_option(Option *opt)}}]{\setlength{\rightskip}{0pt plus 5cm}void affichage\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{{\bf Option} $\ast$}]{opt}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_aba24889b9dabf8bcd576c88285c7bd75}{}\label{analyseur_8c_aba24889b9dabf8bcd576c88285c7bd75}
+
+
+Affiche les options et les arguments passés à l\textquotesingle{}exécutable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Contient les options \\
+\hline
+\end{DoxyParams}
+\index{analyseur.\+c@{analyseur.\+c}!callback@{callback}}
+\index{callback@{callback}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{callback(u\+\_\+char $\ast$user, const struct pcap\+\_\+pkthdr $\ast$h, const u\+\_\+char $\ast$bytes)}{callback(u_char *user, const struct pcap_pkthdr *h, const u_char *bytes)}}]{\setlength{\rightskip}{0pt plus 5cm}void callback (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+char $\ast$}]{user, }
+\item[{const struct pcap\+\_\+pkthdr $\ast$}]{h, }
+\item[{const u\+\_\+char $\ast$}]{bytes}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_a5dc2f4ebaf124e7bf53b56c7477199a8}{}\label{analyseur_8c_a5dc2f4ebaf124e7bf53b56c7477199a8}
+
+
+Fonction de callback appelé à chaque lecture d\textquotesingle{}un nouveau paquet. 
+
+Le contenue du paquet contenu dans bytes est forward à la fonction analyse\+\_\+ethenert qui analyse l\textquotesingle{}entête ethernet. On crée un nouveau paquet. On met à jour la liste des paquets lus. On met à jour le pointeur user
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Véhicule les informations \\
+\hline
+{\em pcap\+\_\+pkthdr} & Unused \\
+\hline
+{\em bytes} & Contenu du paquet \\
+\hline
+\end{DoxyParams}
+\index{analyseur.\+c@{analyseur.\+c}!cons@{cons}}
+\index{cons@{cons}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{cons(\+Liste l, Paquet $\ast$nvelt)}{cons(Liste l, Paquet *nvelt)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Liste} cons (
+\begin{DoxyParamCaption}
+\item[{{\bf Liste}}]{l, }
+\item[{{\bf Paquet} $\ast$}]{nvelt}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_a9e11e88b64a6173035fbc3693b792e42}{}\label{analyseur_8c_a9e11e88b64a6173035fbc3693b792e42}
+
+
+Constructeur de liste de paquet. 
+
+Ajout un paquet à la liste des paquets lus. Utilisé pour l\textquotesingle{}affichage avec clutter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Liste des paquets \\
+\hline
+{\em nvelt} & Paquet à ajouter à la liste\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La liste augmentée. 
+\end{DoxyReturn}
+\index{analyseur.\+c@{analyseur.\+c}!free\+\_\+l\+\_\+paquet@{free\+\_\+l\+\_\+paquet}}
+\index{free\+\_\+l\+\_\+paquet@{free\+\_\+l\+\_\+paquet}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{free\+\_\+l\+\_\+paquet(\+Liste l\+\_\+paquet)}{free_l_paquet(Liste l_paquet)}}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+l\+\_\+paquet (
+\begin{DoxyParamCaption}
+\item[{{\bf Liste}}]{l\+\_\+paquet}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_aa786d2dda18985d6ae1c20b425a0b1b4}{}\label{analyseur_8c_aa786d2dda18985d6ae1c20b425a0b1b4}
+
+
+Libère la mémoire. 
+
+Delete la liste des paquets
+
+
+\begin{DoxyParams}{Parameters}
+{\em l\+\_\+paquet} & Liste des paquets à effacer \\
+\hline
+\end{DoxyParams}
+\index{analyseur.\+c@{analyseur.\+c}!main@{main}}
+\index{main@{main}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{analyseur_8c_a0ddf1224851353fc92bfbff6f499fa97}
+\index{analyseur.\+c@{analyseur.\+c}!set\+\_\+option@{set\+\_\+option}}
+\index{set\+\_\+option@{set\+\_\+option}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{set\+\_\+option(\+Option $\ast$option, int argc, char $\ast$argv[])}{set_option(Option *option, int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{{\bf Option} $\ast$}]{option, }
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_a29cc98853004fea19143b99c2611c197}{}\label{analyseur_8c_a29cc98853004fea19143b99c2611c197}
+
+
+Reconnais les options passés à l\textquotesingle{}exécutable. 
+
+Reconnais et initialise les options passés en argument à l\textquotesingle{}exécutable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & Pointeur qui contiendra les options \\
+\hline
+{\em argc} & main \\
+\hline
+{\em argv} & main \\
+\hline
+\end{DoxyParams}
+\index{analyseur.\+c@{analyseur.\+c}!start\+\_\+analyse\+\_\+offline@{start\+\_\+analyse\+\_\+offline}}
+\index{start\+\_\+analyse\+\_\+offline@{start\+\_\+analyse\+\_\+offline}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{start\+\_\+analyse\+\_\+offline(\+User $\ast$user)}{start_analyse_offline(User *user)}}]{\setlength{\rightskip}{0pt plus 5cm}void start\+\_\+analyse\+\_\+offline (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_a4b115c29c5b2ec60686bd113005a2ba4}{}\label{analyseur_8c_a4b115c29c5b2ec60686bd113005a2ba4}
+
+
+Lance l\textquotesingle{}analyse en mode offline. 
+
+Capture à partir d\textquotesingle{}un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \\
+\hline
+\end{DoxyParams}
+\index{analyseur.\+c@{analyseur.\+c}!start\+\_\+analyse\+\_\+online@{start\+\_\+analyse\+\_\+online}}
+\index{start\+\_\+analyse\+\_\+online@{start\+\_\+analyse\+\_\+online}!analyseur.\+c@{analyseur.\+c}}
+\subsubsection[{\texorpdfstring{start\+\_\+analyse\+\_\+online(\+User $\ast$user)}{start_analyse_online(User *user)}}]{\setlength{\rightskip}{0pt plus 5cm}void start\+\_\+analyse\+\_\+online (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8c_a999b77002afb0d1895733855d87d9dd3}{}\label{analyseur_8c_a999b77002afb0d1895733855d87d9dd3}
+
+
+Lance l\textquotesingle{}analyse en mode online. 
+
+Capture en temps réel
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,197 @@
+\hypertarget{analyseur_8h}{}\section{src/analyseur.h File Reference}
+\label{analyseur_8h}\index{src/analyseur.\+h@{src/analyseur.\+h}}
+{\ttfamily \#include $<$pcap.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$net/ethernet.\+h$>$}\\*
+{\ttfamily \#include $<$net/if.\+h$>$}\\*
+{\ttfamily \#include $<$net/if\+\_\+arp.\+h$>$}\\*
+{\ttfamily \#include $<$net/if\+\_\+packet.\+h$>$}\\*
+{\ttfamily \#include $<$net/if\+\_\+ppp.\+h$>$}\\*
+{\ttfamily \#include $<$net/if\+\_\+shaper.\+h$>$}\\*
+{\ttfamily \#include $<$net/if\+\_\+slip.\+h$>$}\\*
+{\ttfamily \#include $<$net/ppp-\/comp.\+h$>$}\\*
+{\ttfamily \#include $<$net/ppp\+\_\+defs.\+h$>$}\\*
+{\ttfamily \#include $<$net/route.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/ether.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/icmp6.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/if\+\_\+ether.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/if\+\_\+fddi.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/if\+\_\+tr.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/igmp.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in\+\_\+systm.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/ip.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/ip6.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/ip\+\_\+icmp.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/tcp.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/udp.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}print\+\_\+ascii.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ftp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}smtp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pop.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}imap.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}telnet.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}http.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dns.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bootp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tcp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}udp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}icmp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ipv4.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ether.\+h\char`\"{}}\\*
+Include dependency graph for analyseur.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{analyseur_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{analyseur_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_option}{Option}
+\item 
+struct \hyperlink{structpaquet}{paquet}
+\item 
+struct \hyperlink{structmaillon}{maillon}
+\item 
+struct \hyperlink{struct_user}{User}
+\item 
+struct \hyperlink{struct__arphdr}{\+\_\+arphdr}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{analyseur_8h_aabcb2d6536b6c0ab41f99493c911489b}{couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct tm \hyperlink{analyseur_8h_a8e361667cc667d5a11fd84869a8de384}{Date}
+\item 
+typedef struct \hyperlink{struct_option}{Option} \hyperlink{analyseur_8h_ab04ea1b4cb7ae1ddc63e3f014cae5515}{Option}
+\item 
+typedef struct \hyperlink{structpaquet}{paquet} \hyperlink{analyseur_8h_ac588becf5702254d8163c3386192122b}{Paquet}
+\item 
+typedef struct \hyperlink{structmaillon}{maillon} $\ast$ \hyperlink{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{Liste}
+\item 
+typedef struct \hyperlink{struct_user}{User} \hyperlink{analyseur_8h_aebb0f8a8bd00b8afba0e5abcf5b559c7}{User}
+\item 
+typedef struct ether\+\_\+header \hyperlink{analyseur_8h_ad90aff77137032898c538ebab55e5c76}{Ether\+Hdr}
+\item 
+typedef struct \hyperlink{struct__arphdr}{\+\_\+arphdr} \hyperlink{analyseur_8h_ad6a591e8b3d92a7c1cd97fed01ff92c3}{Arp\+Hdr}
+\item 
+typedef struct iphdr \hyperlink{analyseur_8h_a6fc2e7c521fb740fdb7d8b8c16698324}{Ip\+Hdr}
+\item 
+typedef struct tcphdr \hyperlink{analyseur_8h_a0a79f5959e54cfe5f13ff5207c59152e}{Tcp\+Hdr}
+\item 
+typedef struct udphdr \hyperlink{analyseur_8h_a450cdf739df0886778ce02bd0ab86b63}{Udp\+Hdr}
+\item 
+typedef struct icmphdr \hyperlink{analyseur_8h_ac69a3725cff99f912ce0d4281b5b4ea7}{Icmp\+Hdr}
+\item 
+typedef struct \hyperlink{structbootp}{bootp} \hyperlink{analyseur_8h_abda6a1c8d85a6aab6c4819fe6e97c2d3}{Bootp}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{Liste} \hyperlink{analyseur_8h_a9e11e88b64a6173035fbc3693b792e42}{cons} (\hyperlink{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{Liste} l, \hyperlink{analyseur_8h_ac588becf5702254d8163c3386192122b}{Paquet} $\ast$nvelt)
+\begin{DoxyCompactList}\small\item\em Constructeur de liste de paquet. \end{DoxyCompactList}\item 
+void \hyperlink{analyseur_8h_a0a9b0fae800c2639d0dfa1858d25467e}{start\+\_\+analyse} (\hyperlink{struct_user}{User} $\ast$user)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{analyseur.\+h@{analyseur.\+h}!couleur@{couleur}}
+\index{couleur@{couleur}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{couleur}{couleur}}]{\setlength{\rightskip}{0pt plus 5cm}\#define couleur(
+\begin{DoxyParamCaption}
+\item[{}]{param}
+\end{DoxyParamCaption}
+)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)}\hypertarget{analyseur_8h_aabcb2d6536b6c0ab41f99493c911489b}{}\label{analyseur_8h_aabcb2d6536b6c0ab41f99493c911489b}
+
+
+\subsection{Typedef Documentation}
+\index{analyseur.\+h@{analyseur.\+h}!Arp\+Hdr@{Arp\+Hdr}}
+\index{Arp\+Hdr@{Arp\+Hdr}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Arp\+Hdr}{ArpHdr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+arphdr} {\bf Arp\+Hdr}}\hypertarget{analyseur_8h_ad6a591e8b3d92a7c1cd97fed01ff92c3}{}\label{analyseur_8h_ad6a591e8b3d92a7c1cd97fed01ff92c3}
+\index{analyseur.\+h@{analyseur.\+h}!Bootp@{Bootp}}
+\index{Bootp@{Bootp}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Bootp}{Bootp}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf bootp} {\bf Bootp}}\hypertarget{analyseur_8h_abda6a1c8d85a6aab6c4819fe6e97c2d3}{}\label{analyseur_8h_abda6a1c8d85a6aab6c4819fe6e97c2d3}
+\index{analyseur.\+h@{analyseur.\+h}!Date@{Date}}
+\index{Date@{Date}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Date}{Date}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct tm {\bf Date}}\hypertarget{analyseur_8h_a8e361667cc667d5a11fd84869a8de384}{}\label{analyseur_8h_a8e361667cc667d5a11fd84869a8de384}
+\index{analyseur.\+h@{analyseur.\+h}!Ether\+Hdr@{Ether\+Hdr}}
+\index{Ether\+Hdr@{Ether\+Hdr}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Ether\+Hdr}{EtherHdr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct ether\+\_\+header {\bf Ether\+Hdr}}\hypertarget{analyseur_8h_ad90aff77137032898c538ebab55e5c76}{}\label{analyseur_8h_ad90aff77137032898c538ebab55e5c76}
+\index{analyseur.\+h@{analyseur.\+h}!Icmp\+Hdr@{Icmp\+Hdr}}
+\index{Icmp\+Hdr@{Icmp\+Hdr}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Icmp\+Hdr}{IcmpHdr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct icmphdr {\bf Icmp\+Hdr}}\hypertarget{analyseur_8h_ac69a3725cff99f912ce0d4281b5b4ea7}{}\label{analyseur_8h_ac69a3725cff99f912ce0d4281b5b4ea7}
+\index{analyseur.\+h@{analyseur.\+h}!Ip\+Hdr@{Ip\+Hdr}}
+\index{Ip\+Hdr@{Ip\+Hdr}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Ip\+Hdr}{IpHdr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct iphdr {\bf Ip\+Hdr}}\hypertarget{analyseur_8h_a6fc2e7c521fb740fdb7d8b8c16698324}{}\label{analyseur_8h_a6fc2e7c521fb740fdb7d8b8c16698324}
+\index{analyseur.\+h@{analyseur.\+h}!Liste@{Liste}}
+\index{Liste@{Liste}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Liste}{Liste}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf maillon}$\ast$ {\bf Liste}}\hypertarget{analyseur_8h_a59ebf944443232737291655fc0b45ff2}{}\label{analyseur_8h_a59ebf944443232737291655fc0b45ff2}
+\index{analyseur.\+h@{analyseur.\+h}!Option@{Option}}
+\index{Option@{Option}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Option}{Option}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf Option} {\bf Option}}\hypertarget{analyseur_8h_ab04ea1b4cb7ae1ddc63e3f014cae5515}{}\label{analyseur_8h_ab04ea1b4cb7ae1ddc63e3f014cae5515}
+\index{analyseur.\+h@{analyseur.\+h}!Paquet@{Paquet}}
+\index{Paquet@{Paquet}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Paquet}{Paquet}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf paquet} {\bf Paquet}}\hypertarget{analyseur_8h_ac588becf5702254d8163c3386192122b}{}\label{analyseur_8h_ac588becf5702254d8163c3386192122b}
+\index{analyseur.\+h@{analyseur.\+h}!Tcp\+Hdr@{Tcp\+Hdr}}
+\index{Tcp\+Hdr@{Tcp\+Hdr}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Tcp\+Hdr}{TcpHdr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct tcphdr {\bf Tcp\+Hdr}}\hypertarget{analyseur_8h_a0a79f5959e54cfe5f13ff5207c59152e}{}\label{analyseur_8h_a0a79f5959e54cfe5f13ff5207c59152e}
+\index{analyseur.\+h@{analyseur.\+h}!Udp\+Hdr@{Udp\+Hdr}}
+\index{Udp\+Hdr@{Udp\+Hdr}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{Udp\+Hdr}{UdpHdr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct udphdr {\bf Udp\+Hdr}}\hypertarget{analyseur_8h_a450cdf739df0886778ce02bd0ab86b63}{}\label{analyseur_8h_a450cdf739df0886778ce02bd0ab86b63}
+\index{analyseur.\+h@{analyseur.\+h}!User@{User}}
+\index{User@{User}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{User}{User}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf User} {\bf User}}\hypertarget{analyseur_8h_aebb0f8a8bd00b8afba0e5abcf5b559c7}{}\label{analyseur_8h_aebb0f8a8bd00b8afba0e5abcf5b559c7}
+
+
+\subsection{Function Documentation}
+\index{analyseur.\+h@{analyseur.\+h}!cons@{cons}}
+\index{cons@{cons}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{cons(\+Liste l, Paquet $\ast$nvelt)}{cons(Liste l, Paquet *nvelt)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Liste} cons (
+\begin{DoxyParamCaption}
+\item[{{\bf Liste}}]{l, }
+\item[{{\bf Paquet} $\ast$}]{nvelt}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8h_a9e11e88b64a6173035fbc3693b792e42}{}\label{analyseur_8h_a9e11e88b64a6173035fbc3693b792e42}
+
+
+Constructeur de liste de paquet. 
+
+Ajout un paquet à la liste des paquets lus. Utilisé pour l\textquotesingle{}affichage avec clutter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Liste des paquets \\
+\hline
+{\em nvelt} & Paquet à ajouter à la liste\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La liste augmentée. 
+\end{DoxyReturn}
+\index{analyseur.\+h@{analyseur.\+h}!start\+\_\+analyse@{start\+\_\+analyse}}
+\index{start\+\_\+analyse@{start\+\_\+analyse}!analyseur.\+h@{analyseur.\+h}}
+\subsubsection[{\texorpdfstring{start\+\_\+analyse(\+User $\ast$user)}{start_analyse(User *user)}}]{\setlength{\rightskip}{0pt plus 5cm}void start\+\_\+analyse (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}\hypertarget{analyseur_8h_a0a9b0fae800c2639d0dfa1858d25467e}{}\label{analyseur_8h_a0a9b0fae800c2639d0dfa1858d25467e}

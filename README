@@ -1,0 +1,26 @@
+Analyseur réseau	---	De La Rohce Constantin
+
+Usage:
+./bin/analyseur -i <Interface> -o <Fichier> -f <Filtre> -v <Verbose 1..3>
+
+Documentation Doxygen
+Ouvrir html/index.html
+
+Analysé :
+	ftp - ports 20 et 21, ascii
+	smtp - ascii
+	pop - ascii 
+	imap - ascii
+	telnet - Negociation + ascii
+	http - ascii
+	dns - entête + ascii
+	bootp - entête
+	dhcp - decodage Type Longueur Valeur
+	tcp - entête
+	udp - entête
+	icmp - type & code
+	ipv4 - entête
+	arp - entête
+	ether - entête
+
+Fichiers test avec differentes trames dans captures/
